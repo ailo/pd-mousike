@@ -50,10 +50,10 @@ static void sys_initloadpreferences( void)
     char default_prefs_file[MAXPDSTRING];
     struct stat statbuf;
 
-    snprintf(default_prefs_file, MAXPDSTRING, "%s/default.pdextended", 
+    snprintf(default_prefs_file, MAXPDSTRING, "%s/default.pd-mousike", 
         sys_libdir->s_name);
     if (homedir)
-        snprintf(user_prefs_file, MAXPDSTRING, "%s/.pdextended", homedir);
+        snprintf(user_prefs_file, MAXPDSTRING, "%s/.pd-mousike", homedir);
     if (stat(user_prefs_file, &statbuf) == 0) 
         strncpy(filenamebuf, user_prefs_file, MAXPDSTRING);
     else if (stat(default_prefs_file, &statbuf) == 0)
@@ -134,7 +134,7 @@ static void sys_initsavepreferences( void)
 
     if (!homedir)
         return;
-    snprintf(filenamebuf, MAXPDSTRING, "%s/.pdextended", homedir);
+    snprintf(filenamebuf, MAXPDSTRING, "%s/.pd-mousike", homedir);
     filenamebuf[MAXPDSTRING-1] = 0;
     if ((sys_prefsavefp = fopen(filenamebuf, "w")) == NULL)
     {

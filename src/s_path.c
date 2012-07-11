@@ -233,9 +233,9 @@ void sys_setextrapath(const char *p)
     namelist_free(sys_staticpath);
     /* add standard place for users to install stuff first */
 #ifdef __gnu_linux__
-    sys_expandpath("~/pd-externals", pathbuf, MAXPDSTRING);
+    sys_expandpath("~/mousike", pathbuf, MAXPDSTRING);
     sys_staticpath = namelist_append(0, pathbuf, 0);
-    sys_staticpath = namelist_append(sys_staticpath, "/usr/local/lib/pd-externals", 0);
+    sys_staticpath = namelist_append(sys_staticpath, "/usr/local/lib/mousike", 0);
 #endif
 
 #ifdef __APPLE__
