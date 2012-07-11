@@ -48,6 +48,8 @@ package require pdtk_text
 # TODO eliminate this kludge:
 package require wheredoesthisgo
 package require pd_guiprefs
+# MOUSIKE_EDIT
+# package require kiosk-plugin
 
 #------------------------------------------------------------------------------#
 # import functions into the global namespace
@@ -224,16 +226,16 @@ set ::redo_action "no"
 set ::undo_toplevel "."
 
 # color scheme
-set ::canvas_fill "white"
+set ::canvas_fill "#e8e8e8"
 set ::text_color "#000"
 set ::select_color "#00f"
 set ::dash_outline "#f00"
-set ::dash_fill "#fff"
+set ::dash_fill "#000"
 set ::box_outline "#ccc"
 set ::graph_outline "#777"
-set ::atom_box_fill "#eee"
-set ::msg_box_fill "#f8f8f6"
-set ::obj_box_fill "#f6f8f8"
+set ::atom_box_fill "#fff"
+set ::msg_box_fill "#bcbcbc"
+set ::obj_box_fill "#dcdcdc"
 set ::signal_cord_highlight "#58a"
 set ::signal_cord "#558"
 set ::signal_nlet $signal_cord

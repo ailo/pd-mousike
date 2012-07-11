@@ -5,7 +5,7 @@ namespace eval ::pdwindow:: {
     variable logbuffer {}
     variable tclentry {}
     variable tclentry_history {"console show"}
-    variable history_position 0
+    variable history_position 1
     variable linecolor 0 ;# is toggled to alternate text line colors
     variable logmenuitems
     variable maxloglevel 4
@@ -314,7 +314,7 @@ proc ::pdwindow::pdwindow_bindings {} {
 proc ::pdwindow::eval_tclentry {} {
     variable tclentry
     variable tclentry_history
-    variable history_position 0
+    variable history_position 1
     if {$tclentry eq ""} {return} ;# no need to do anything if empty
     if {[catch {uplevel #0 $tclentry} errorname]} {
         global errorInfo
@@ -395,17 +395,17 @@ proc ::pdwindow::create_window {} {
     set ::loaded(.pdwindow) 0
 
     # colorize by class before creating anything
-    option add *PdWindow*Entry.highlightBackground "lightgray" startupFile
-    option add *PdWindow*Frame.background "lightgray" startupFile
-    option add *PdWindow*Label.background "lightgray" startupFile
-    option add *PdWindow*Checkbutton.background "lightgray" startupFile
-    option add *PdWindow*Menubutton.background "lightgray" startupFile
+    option add *PdWindow*Entry.highlightBackground "#e8e8e8" startupFile
+    option add *PdWindow*Frame.background "#e8e8e8" startupFile
+    option add *PdWindow*Label.background "#e8e8e8" startupFile
+    option add *PdWindow*Checkbutton.background "#e8e8e8" startupFile
+    option add *PdWindow*Menubutton.background "#e8e8e8" startupFile
     option add *PdWindow*Text.background "white" startupFile
     option add *PdWindow*Entry.background "white" startupFile
 
     toplevel .pdwindow -class PdWindow
-    wm title .pdwindow [_ "Pd-extended"]
-    set ::windowname(.pdwindow) [_ "Pd-extended"]
+    wm title .pdwindow [_ "pd-mousike"]
+    set ::windowname(.pdwindow) [_ "pd-mousike"]
     if {$::windowingsystem eq "x11"} {
         wm minsize .pdwindow 400 75
     } else {
